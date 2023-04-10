@@ -1,0 +1,324 @@
+{
+    "info": {
+        "name": "codermanagement",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Task",
+            "item": [
+                {
+                    "name": "get task by status",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:4000/task?status=pending",
+                            "query": [
+                                {
+                                    "key": "status",
+                                    "value": "pending"
+                                }
+                            ],
+                            "variable": [],
+                            "path": [
+                                "task"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        }
+                    }
+                },
+                {
+                    "name": "get all tasks",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:4000/task",
+                            "path": [
+                                "task"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        }
+                    }
+                },
+                {
+                    "name": "create task",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:4000/task",
+                            "path": [
+                                "task"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"title\": \"Work C\",\n  \"description\": \"Work on testing\",\n  \"status\": \"pending\",\n  \"assignedTo\": null\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "get single task",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:4000/task/643280b1836f8d6912a40400",
+                            "path": [
+                                "task",
+                                "643280b1836f8d6912a40400"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        }
+                    }
+                },
+                {
+                    "name": "delete task",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:4000/task/64328139836f8d6912a40403",
+                            "path": [
+                                "task",
+                                "64328139836f8d6912a40403"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        }
+                    }
+                },
+                {
+                    "name": "get task by title",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:4000/task?title=work",
+                            "query": [
+                                {
+                                    "key": "title",
+                                    "value": "work"
+                                }
+                            ],
+                            "variable": [],
+                            "path": [
+                                "task"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        }
+                    }
+                },
+                {
+                    "name": "update status task",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:4000/task/6432800c836f8d6912a403fa",
+                            "path": [
+                                "task",
+                                "6432800c836f8d6912a403fa"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"status\": \"review\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "task assigned",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:4000/task/6433c7c4aaa2b4b5bc6f1fc5/assign/6433c7caaaa2b4b5bc6f1fc7",
+                            "path": [
+                                "task",
+                                "6433c7c4aaa2b4b5bc6f1fc5",
+                                "assign",
+                                "6433c7caaaa2b4b5bc6f1fc7"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"assignedTo\": \"6433c7caaaa2b4b5bc6f1fc7\"\n}\n"
+                        }
+                    }
+                },
+                {
+                    "name": "unassign task",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:4000/task/6433c7c4aaa2b4b5bc6f1fc5/unassign/6433c7caaaa2b4b5bc6f1fc7",
+                            "path": [
+                                "task",
+                                "6433c7c4aaa2b4b5bc6f1fc5",
+                                "unassign",
+                                "6433c7caaaa2b4b5bc6f1fc7"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"assignedTo\": null\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "user",
+            "item": [
+                {
+                    "name": "get users",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:4000/user",
+                            "path": [
+                                "user"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        }
+                    }
+                },
+                {
+                    "name": "post user",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:4000/user",
+                            "path": [
+                                "user"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"name\": \"Sau Rieng\",\n  \"email\": \"sauriengxinhdep@gmail.com\",\n  \"role\": \"Employee\",\n  \"tasks\": null\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "get user by name query",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:4000/user?page=1&limit=4&name=steven job",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "4"
+                                },
+                                {
+                                    "key": "name",
+                                    "value": "steven job"
+                                }
+                            ],
+                            "variable": [],
+                            "path": [
+                                "user"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        }
+                    }
+                },
+                {
+                    "name": "get task of user",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:4000/user/6433c7caaaa2b4b5bc6f1fc7",
+                            "path": [
+                                "user",
+                                "6433c7caaaa2b4b5bc6f1fc7"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
